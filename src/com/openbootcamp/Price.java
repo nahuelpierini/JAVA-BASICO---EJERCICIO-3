@@ -1,13 +1,23 @@
 package com.openbootcamp;
 
+import java.util.Scanner;
+
 public class Price {
     public static void main(String[] args) {
 
-        double resut = getPrice(245, 10.5);
-        System.out.println("El precio final es de: " + resut + " €");
+        System.out.println("El precio final es de: " + getPrice() );
+
+
 
     }
-    static double getPrice(double precio, double IVA){
-        return precio+((precio*IVA)/100);
+    static double getPrice(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce Precio: ");
+        double precio = scanner.nextDouble();
+        double IVA = precio*0.21;
+        double precioFinal = precio + IVA;
+        return precioFinal;
+
+
     }
 }
